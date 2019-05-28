@@ -16,8 +16,8 @@ const fs = require("fs");
      case "echo":
        commandLibrary.echo(userInputArray.slice(1).join(" "));
        break;
-     case "cat":
-       commandLibrary.cat(userInputArray.slice(1));
+     case "arturo":
+       commandLibrary.arturo(userInputArray.slice(1));
        break;
      case "head":
        commandLibrary.head(userInputArray.slice(1));
@@ -36,8 +36,9 @@ const commandLibrary = {
   "echo": function(userInput) {
       done(userInput);
   },
-  "cat": function(fullPath) {
+  "arturo": function(fullPath) {
     const fileName = fullPath[0];
+    console.log("Test");
     fs.readFile(fileName, (err, data) => {
         if (err) throw err;
         done(data);

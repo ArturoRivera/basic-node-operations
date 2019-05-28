@@ -6,10 +6,171 @@ Answer:
 in the code was grouped together and alphabetically sorted by the first word of
 the line.
 
+OUTPUT: 
+        done(data);
+        firstLines.push(dataArr[i]);
+        if (err) throw err;
+        lastLines.push(dataArr[i]);
+       break;
+       break;
+       break;
+       break;
+       commandLibrary.arturo(userInputArray.slice(1));
+       commandLibrary.echo(userInputArray.slice(1).join(" "));
+       commandLibrary.errorHandler(userInputArray[0]);
+       commandLibrary.head(userInputArray.slice(1));
+       commandLibrary.tail(userInputArray.slice(1));
+      data = firstLines.join('\n');
+      data = lastLines.join('\n');
+      done(data);
+      done(data);
+      done(userInput);
+      for (let i = 0; i < 2; i++) {
+      for (let i = dataArr.length - 4; i < dataArr.length; i++) {
+      if (err) throw err;
+      if (err) throw err;
+      let dataArr = data.toString().split('\n');
+      let dataArr = data.toString().split('\n');
+      let firstLines = [];
+      let lastLines = [];
+      }
+      }
+     case "arturo":
+     case "echo":
+     case "head":
+     case "tail":
+     default:
+     process.stdout.write('\nprompt > ');
+     process.stdout.write(output);
+    console.log("Test");
+    const fileName = fullPath[0];
+    const fileName = fullPath[0];
+    const fileName = fullPath[0];
+    done('Error! ' + userInput + ' is not a command.')
+    fs.readFile(fileName, (err, data) => {
+    fs.readFile(fileName, (err, data) => {
+    fs.readFile(fileName, (err,data) => {
+    });
+    });
+    });
+   const command = userInputArray[0];
+   const userInputArray = userInput.split(" ");
+   switch (command) {
+   }
+  "arturo": function(fullPath) {
+  "echo": function(userInput) {
+  "errorHandler": function(userInput) {
+  "head": function(fullPath) {
+  "tail": function(fullPath) {
+  //parses the user input to understand which command was typed
+  }
+  },
+  },
+  },
+  },
+ //the echo command
+ function done(output) {
+ function evaluateCmd(userInput) {
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
+ }
+ }
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+const commandLibrary = {
+const fs = require("fs");
+};
+
+
 - WC printed out the # of lines, the number of words and the number of characters.
+
+OUTPUT:
+79     214    2111 commands.js
 
 - Uniq sorted each line in the file and only returned different lines and
 removed the duplicate lines next to each other.
+
+OUTPUT:
+const fs = require("fs");
+
+//write out data
+ function done(output) {
+     process.stdout.write(output);
+     process.stdout.write('\nprompt > ');
+ }
+
+//where we will store our commands
+ function evaluateCmd(userInput) {
+  //parses the user input to understand which command was typed
+   const userInputArray = userInput.split(" ");
+   const command = userInputArray[0];
+
+   switch (command) {
+     case "echo":
+       commandLibrary.echo(userInputArray.slice(1).join(" "));
+       break;
+     case "arturo":
+       commandLibrary.arturo(userInputArray.slice(1));
+       break;
+     case "head":
+       commandLibrary.head(userInputArray.slice(1));
+       break;
+     case "tail":
+       commandLibrary.tail(userInputArray.slice(1));
+       break;
+     default:
+       commandLibrary.errorHandler(userInputArray[0]);
+   }
+ }
+
+//where we will store the logic of our commands
+const commandLibrary = {
+ //the echo command
+  "echo": function(userInput) {
+      done(userInput);
+  },
+  "arturo": function(fullPath) {
+    const fileName = fullPath[0];
+    console.log("Test");
+    fs.readFile(fileName, (err, data) => {
+        if (err) throw err;
+        done(data);
+    });
+  },
+  "head": function(fullPath) {
+    const fileName = fullPath[0];
+    fs.readFile(fileName, (err, data) => {
+      if (err) throw err;
+      let dataArr = data.toString().split('\n');
+      let firstLines = [];
+      for (let i = 0; i < 2; i++) {
+        firstLines.push(dataArr[i]);
+      }
+      data = firstLines.join('\n');
+      done(data);
+    });
+  },
+  "tail": function(fullPath) {
+    const fileName = fullPath[0];
+    fs.readFile(fileName, (err,data) => {
+      if (err) throw err;
+      let dataArr = data.toString().split('\n');
+      let lastLines = [];
+      for (let i = dataArr.length - 4; i < dataArr.length; i++) {
+        lastLines.push(dataArr[i]);
+      }
+      data = lastLines.join('\n');
+      done(data);
+    });
+  },
+  "errorHandler": function(userInput) {
+    done('Error! ' + userInput + ' is not a command.')
+  }
+};
+
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
 
 2. Using the pipe (|) connect at least two commands and run it on commands.js.
 Explain what the output was and why the specific data was outputted.
@@ -21,6 +182,66 @@ removed duplicate break;
 
 When things are piped the first command executes and then the second will take
 the info that was executed and execute the second command.
+
+OUTPUT:
+done(data);
+firstLines.push(dataArr[i]);
+if (err) throw err;
+lastLines.push(dataArr[i]);
+break;
+commandLibrary.arturo(userInputArray.slice(1));
+commandLibrary.echo(userInputArray.slice(1).join(" "));
+commandLibrary.errorHandler(userInputArray[0]);
+commandLibrary.head(userInputArray.slice(1));
+commandLibrary.tail(userInputArray.slice(1));
+data = firstLines.join('\n');
+data = lastLines.join('\n');
+done(data);
+done(userInput);
+for (let i = 0; i < 2; i++) {
+for (let i = dataArr.length - 4; i < dataArr.length; i++) {
+if (err) throw err;
+let dataArr = data.toString().split('\n');
+let firstLines = [];
+let lastLines = [];
+}
+case "arturo":
+case "echo":
+case "head":
+case "tail":
+default:
+process.stdout.write('\nprompt > ');
+process.stdout.write(output);
+console.log("Test");
+const fileName = fullPath[0];
+done('Error! ' + userInput + ' is not a command.')
+fs.readFile(fileName, (err, data) => {
+fs.readFile(fileName, (err,data) => {
+});
+const command = userInputArray[0];
+const userInputArray = userInput.split(" ");
+switch (command) {
+}
+"arturo": function(fullPath) {
+"echo": function(userInput) {
+"errorHandler": function(userInput) {
+"head": function(fullPath) {
+"tail": function(fullPath) {
+//parses the user input to understand which command was typed
+}
+},
+//the echo command
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+}
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+const commandLibrary = {
+const fs = require("fs");
+};
 
 6. Given a string, reverse the order of characters in each word within a sentence
 while maintaining the original word order and whitespace and return the string.
